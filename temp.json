@@ -1,0 +1,131 @@
+{
+  "alps": {
+    "version": "1.0",
+    "descriptors": [
+      {
+        "id": "product-representation",
+        "href": "http://localhost:8080/api/profile/products",
+        "descriptors": [
+          {
+            "name": "id",
+            "type": "SEMANTIC"
+          },
+          {
+            "name": "vendor",
+            "type": "SEMANTIC"
+          },
+          {
+            "name": "model",
+            "type": "SEMANTIC"
+          },
+          {
+            "name": "price",
+            "type": "SEMANTIC"
+          },
+          {
+            "name": "memory",
+            "type": "SEMANTIC"
+          },
+          {
+            "name": "weight",
+            "type": "SEMANTIC"
+          },
+          {
+            "name": "color",
+            "type": "SEMANTIC"
+          },
+          {
+            "name": "imageUrl",
+            "type": "SEMANTIC"
+          },
+          {
+            "name": "date",
+            "type": "SEMANTIC"
+          }
+        ]
+      },
+      {
+        "id": "get-products",
+        "name": "products",
+        "type": "SAFE",
+        "rt": "#product-representation",
+        "descriptors": [
+          {
+            "name": "page",
+            "doc": {
+              "value": "The page to return.",
+              "format": "TEXT"
+            },
+            "type": "SEMANTIC"
+          },
+          {
+            "name": "size",
+            "doc": {
+              "value": "The size of the page to return.",
+              "format": "TEXT"
+            },
+            "type": "SEMANTIC"
+          },
+          {
+            "name": "sort",
+            "doc": {
+              "value": "The sorting criteria to use to calculate the content of the page.",
+              "format": "TEXT"
+            },
+            "type": "SEMANTIC"
+          }
+        ]
+      },
+      {
+        "id": "create-products",
+        "name": "products",
+        "type": "UNSAFE",
+        "rt": "#product-representation"
+      },
+      {
+        "id": "get-product",
+        "name": "product",
+        "type": "SAFE",
+        "rt": "#product-representation"
+      },
+      {
+        "id": "patch-product",
+        "name": "product",
+        "type": "UNSAFE",
+        "rt": "#product-representation"
+      },
+      {
+        "id": "delete-product",
+        "name": "product",
+        "type": "IDEMPOTENT",
+        "rt": "#product-representation"
+      },
+      {
+        "id": "update-product",
+        "name": "product",
+        "type": "IDEMPOTENT",
+        "rt": "#product-representation"
+      },
+      {
+        "name": "vendor",
+        "type": "SAFE",
+        "descriptors": [
+          {
+            "name": "vendor",
+            "type": "SEMANTIC"
+          }
+        ]
+      },
+      {
+        "name": "findByVendorContains",
+        "type": "SAFE",
+        "descriptors": [
+          {
+            "name": "vendor",
+            "type": "SEMANTIC"
+          }
+        ]
+      }
+    ]
+  }
+}

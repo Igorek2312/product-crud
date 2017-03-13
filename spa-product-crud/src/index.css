@@ -1,0 +1,8 @@
+.clickable{
+ cursor: pointer;
+    margin-right: 10px;
+}
+
+.clickable:hover {
+    color: red;
+}

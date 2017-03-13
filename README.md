@@ -1,0 +1,1 @@
+Simple sample CRUD application developed using Spring Data Rest, ReactJS and Redux.
